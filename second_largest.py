@@ -1,19 +1,19 @@
 def find_second_largest(arr):
-    if len(arr) < 2:
-        return None  # Not enough elements for a second largest
-
-    first = second = float('-inf')
+    largest = None
+    second_largest = None
 
     for num in arr:
-        if num > first:
-            second = first
-            first = num
-        elif first > num > second:
-            second = num
+        if largest is None or num > largest:
+            second_largest = largest
+            largest = num
+        elif second_largest is None or (num > second_largest and num != largest):
+            second_largest = num
 
-    return second if second != float('-inf') else None
+    return second_largest
+
 
 # Call the function
-numbers = [10, 5, 8, 12, 3]                
+numbers = [9, 9]
+
 second_largest = find_second_largest(numbers)
 print("Second largest number is:", second_largest)
