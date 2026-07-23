@@ -13,7 +13,7 @@ def find_second_largest(arr):
 
 
 # Call the function
-numbers = [9, 9]
+numbers = [9, 8]
 
 second_largest = find_second_largest(numbers)
 print("Second largest number is:", second_largest)
